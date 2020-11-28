@@ -6,7 +6,6 @@ const mongoose = require('mongoose')
 const PostsRouter = require('./routes/postsRouter')
 const CategoryRouter = require('./routes/categoryRouter')
 const UserRouter = require('./routes/userRouter')
-const uploadProfile = require('./routes/profile')
 const PORT = process.env.PORT || 5000;
 
 
@@ -21,7 +20,6 @@ app.use(express.json());
 
 //app routes
 app.use('/api/posts',PostsRouter);
-app.use('/upload/',uploadProfile);
 app.use('/api/categories',CategoryRouter);
 app.use('/api/user',UserRouter);
 
