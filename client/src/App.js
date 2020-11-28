@@ -6,7 +6,7 @@ import Home from './components/Home/Home';
 import SinglePost from './components/SinglePost/SinglePost';
 import Footer from './components/Footer/Footer';
 // import ImageUpload from './components/ImageUpload/ImageUpload';
-import Test from './components/ImageUpload/Test';
+// import Test from './components/ImageUpload/Test';
 import SingleCategory from './components/SingleCategory/SingleCategory';
 
 function App(props) {
@@ -25,7 +25,7 @@ function App(props) {
         <Route path="/post/:id" component={SinglePost}/>
         <Route path="/category/:id" component={SingleCategory}/>
         {/* <Route path="/image" component={ImageUpload}/> */}
-        <Route path="/test" component={Test}/>
+        {/* <Route path="/test" component={Test}/> */}
       </Switch>
       <Footer/>
      
