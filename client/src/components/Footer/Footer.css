@@ -1,0 +1,23 @@
+#root {
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 2.5rem;
+}
+
+.page-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
+  color: #fff;
+  align-items: center;
+}
+.page-footer a {
+  color: #fff;
+}
+.footer-copyright {
+  display: flex;
+  height: 2.5rem;
+  justify-content: center;
+  align-items: center;
+}

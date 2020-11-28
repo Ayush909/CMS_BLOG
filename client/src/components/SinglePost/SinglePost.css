@@ -1,0 +1,17 @@
+.singlePost_title {
+  font-weight: 700;
+}
+
+.singlePost_subtitle {
+  font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #757575;
+}
+
+.author_info {
+  display: flex;
+  align-items: flex-end;
+  margin: 20px auto;
+}
+.author_info > img {
+  margin-right: 10px;
+}
