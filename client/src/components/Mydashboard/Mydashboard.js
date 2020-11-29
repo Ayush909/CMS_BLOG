@@ -24,7 +24,7 @@ function Mydashboard() {
         
             <Admin 
                 layout={MyLayout} 
-                dataProvider={restProvider('http://localhost:3000/api')} 
+                dataProvider={restProvider('/api')} 
                 authProvider={authProvider}
                 loginPage={MyLoginPage}
             >
