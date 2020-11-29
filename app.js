@@ -7,6 +7,7 @@ const PostsRouter = require('./routes/postsRouter')
 const CategoryRouter = require('./routes/categoryRouter')
 const UserRouter = require('./routes/userRouter')
 const PORT = process.env.PORT || 5000;
+const path = require('path')
 
 
 //db connection
