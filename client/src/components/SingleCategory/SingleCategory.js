@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import { useEffect } from 'react'
-import { Col, Container, Jumbotron, Row } from 'react-bootstrap'
+import { Col, Container, Jumbotron, Row, Spinner } from 'react-bootstrap'
 import PostCard from '../PostCard/PostCard'
 import axios from 'axios'
 
@@ -34,10 +34,12 @@ function SingleCategory(props) {
 
     return (
         <div>
-            <Jumbotron >
+        { posts.length > 0 && category != null ? 
+        <>
+        <Jumbotron >
             <Row>
                 <Col className="jumbo_col_ayu text-center"> 
-                  <h2>{category?.name}</h2>
+                <h2>{category?.name}</h2>
                 </Col>
             </Row>           
         </Jumbotron>
@@ -50,6 +52,15 @@ function SingleCategory(props) {
                 ))}                
             </div>
         </Container>
+        </>
+        :
+        <div className="myloader">
+            <Spinner animation="border" role="status">
+                <span className="sr-only">Loading...</span>
+            </Spinner>
+        </div>
+
+        }
         </div>
     )
 }

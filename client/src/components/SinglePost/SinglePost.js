@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Container, Image } from 'react-bootstrap'
+import { Container, Image, Spinner } from 'react-bootstrap'
 import {WhatsappShareButton,WhatsappIcon,FacebookShareButton,FacebookIcon} from 'react-share'
 import axios from 'axios'
 import './SinglePost.css'
@@ -61,8 +61,11 @@ function SinglePost(props) {
             </Container>
 
             : 
-            
-            <h4>Loading...</h4>
+            <div className="myloader">
+                <Spinner animation="border" role="status">
+                    <span className="sr-only">Loading...</span>
+                </Spinner>
+            </div>
             
             }
         </Container>

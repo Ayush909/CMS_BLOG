@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Button, Jumbotron,Image,Col,Row,Container } from 'react-bootstrap'
+import { Button, Jumbotron,Image,Col,Row,Container, Spinner } from 'react-bootstrap'
 import PostCard from '../PostCard/PostCard'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
@@ -33,46 +33,49 @@ function Home() {
 
     return (
         <div>
+            {posts.length > 0 && randomPost != null ? 
+                <>
+                <Jumbotron >
+                <Row>
+                    <Col className="jumbo_col_ayu text-center"> 
+                                    
+                        <Image src={`https://picsum.photos/id/105${Math.floor(Math.random()*10)}/300/200`}  fluid rounded width="300" height="200" thumbnail="true"/>
+                        
+                    </Col>
+                    <Col lg={8} className="jumbo_col_ayu">
+                        <h1>{randomPost?.title}</h1>
+                        <p>
+                            {randomPost?.subtitle}
+                        </p>
+                        <p>
+                            <Link to={"/post/"+randomPost?.id}>
+                                <Button className="search_btn">Read more</Button>
+                            </Link>
+                        </p>
+                    </Col>
+                </Row>           
+                </Jumbotron>
 
-        <Jumbotron >
-            <Row>
-                <Col className="jumbo_col_ayu text-center"> 
-                                   
-                    <Image src={`https://picsum.photos/id/105${Math.floor(Math.random()*10)}/300/200`}  fluid rounded width="300" height="200" thumbnail="true"/>
-                    
-                </Col>
-                <Col lg={8} className="jumbo_col_ayu">
-                    <h1>{randomPost?.title}</h1>
-                    <p>
-                        {randomPost?.subtitle}
-                    </p>
-                    <p>
-                        <Link to={"/post/"+randomPost?.id}>
-                            <Button className="search_btn">Read more</Button>
-                        </Link>
-                    </p>
-                </Col>
-            </Row>           
-        </Jumbotron>
+
+                <Container>
+                <div className="post_wrapper">
+                    {posts.map(post=>(
+                        <PostCard postDetails={post} className="post_card"/>
+                    ))}
+                </div>
+                </Container>
+                </>
+            :
+            
+            <div className="myloader">
+                <Spinner animation="border" role="status">
+                    <span className="sr-only">Loading...</span>
+                </Spinner>
+            </div>
+
+            }
 
         
-        <Container>
-            <div className="post_wrapper">
-                {posts.map(post=>(
-                     <PostCard postDetails={post} className="post_card"/>
-                ))}
-                {/* <PostCard className="post_card"/>
-                <PostCard className="post_card"/>
-                <PostCard className="post_card"/>
-                <PostCard className="post_card"/>
-
-                <PostCard className="post_card"/>
-                <PostCard className="post_card"/>
-                <PostCard className="post_card"/>
-                <PostCard className="post_card"/>
-                <PostCard className="post_card"/> */}
-            </div>
-        </Container>
 
                     
         </div>
